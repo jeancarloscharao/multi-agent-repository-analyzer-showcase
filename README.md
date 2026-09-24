@@ -6,7 +6,7 @@ estruturado em JSON, HTML e PDF — sem nunca executar o código do repositório
 
 ![Visão simplificada do pipeline](assets/visao-simplificada.png)
 
-Código-fonte completo, aberto: **[github.com/jeancarloscharao/multi-agent-repository-analyzer](https://github.com/jeancarloscharao/multi-agent-repository-analyzer)**
+<!-- Código-fonte completo, aberto: **[github.com/jeancarloscharao/multi-agent-repository-analyzer](https://github.com/jeancarloscharao/multi-agent-repository-analyzer)** -->
 
 ---
 
@@ -129,7 +129,7 @@ Achados individuais no relatório, com severidade, status de evidência e locali
 
 ![Achados no relatório gerado](assets/relatorio-achados.png)
 
-## 🔗 Acesso
+<!-- ## 🔗 Acesso
 
 Este projeto é uma ferramenta de linha de comando/lote, não um serviço hospedado — não há demo web
 pública. Para rodar localmente:
@@ -145,7 +145,7 @@ REPOSITORY_PATH=/caminho/para/repo/local docker compose run --rm analyzer \
 ```
 
 Instruções completas (Ollama, xAI, OpenAI, execução sem Docker, variáveis de ambiente) estão no
-[README do repositório original](https://github.com/jeancarloscharao/multi-agent-repository-analyzer#readme).
+[README do repositório original](https://github.com/jeancarloscharao/multi-agent-repository-analyzer#readme). -->
 
 ## 🧠 Decisões arquiteturais
 

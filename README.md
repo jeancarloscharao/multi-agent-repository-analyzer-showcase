@@ -7,6 +7,19 @@ JSON, HTML e PDF. O código do repositório analisado nunca é executado, só li
 Versão atual: **v0.1.0-pilot**, um piloto assistido. Os relatórios ajudam bastante, mas ainda
 pedem revisão técnica humana antes de qualquer entrega a um cliente final.
 
+## 🎬 Vídeo
+
+[![Assista no YouTube](https://img.youtube.com/vi/Deu16SIZgAE/maxresdefault.jpg)](https://youtu.be/Deu16SIZgAE)
+
+## 🎧 Em áudio
+
+Gerei com o NotebookLM duas faixas de áudio sobre auditoria de código com IA e evidência validada:
+
+- 🎙️ [IA na Auditoria de Código: Segurança e Evidências](https://soundcloud.com/jean-carlos-charao-sabino/ia-auditoria-codigo-seguranca)
+- 🎙️ [A IA pode auditar seu código. Desde que prove cada achado.](https://soundcloud.com/jean-carlos-charao-sabino/auditoria-de-codigo-com-ia)
+
+Perfil completo no SoundCloud: https://soundcloud.com/jean-carlos-charao-sabino
+
 ![Visão simplificada do pipeline](assets/visao-simplificada.png)
 
 ---
@@ -166,15 +179,6 @@ O painel de um relatório real, gerado com o Perfil Cliente contra uma aplicaç�
 Achados individuais, com severidade, status de evidência, o código responsável e a localização exata:
 
 ![Achados no relatório gerado](assets/relatorio-achados.png)
-
-## 🎧 Em áudio
-
-Gerei com o NotebookLM duas faixas de áudio sobre auditoria de código com IA e evidência validada:
-
-- 🎙️ [IA na Auditoria de Código: Segurança e Evidências](https://soundcloud.com/jean-carlos-charao-sabino/ia-auditoria-codigo-seguranca)
-- 🎙️ [A IA pode auditar seu código. Desde que prove cada achado.](https://soundcloud.com/jean-carlos-charao-sabino/auditoria-de-codigo-com-ia)
-
-Perfil completo no SoundCloud: https://soundcloud.com/jean-carlos-charao-sabino
 
 ## 🔒 Código-fonte
 

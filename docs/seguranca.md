@@ -45,6 +45,22 @@ confiança de uma citação de fato observada:
 Só achados `validated` alimentam o resumo executivo e as recomendações de prioridade. Os
 `unverified` ficam isolados em "Pontos para Investigação" e nunca são tratados como conclusão.
 
+## Segredos redigidos antes de qualquer coisa ser salva
+
+Existem três camadas de evidência dentro do pipeline: a evidência crua, byte-exata, que só vive em
+memória durante a validação; a cópia sanitizada que alimenta o Report Agent; e o que de fato é
+persistido em disco, que é sempre a versão já sanitizada. Não existe `report-raw.json` com evidência
+crua em lugar nenhum.
+
+Um sanitizador determinístico (sem LLM) redige, entre outros: chaves estilo OpenAI (`sk-…`), tokens
+do GitHub (`ghp_`, `github_pat_`, …), JWTs, Bearer tokens, blocos PEM de chave privada e literais em
+atribuições com nomes fortes de segredo (`password`, `secret`, `api_key`, `token`, …). Usos seguros
+sem literal, como `$password = $config['password']` ou `env('PASSWORD')`, não são redigidos, porque
+não carregam segredo nenhum.
+
+Isso não substitui bloquear arquivos sensíveis na origem, nem garante que todo segredo inventado pela
+LLM em prosa seja pego. Os padrões são conservadores e baseados em formatos e literais conhecidos.
+
 ## Isolamento de execução
 
 O container `analyzer` roda como usuário não-root, nunca com `--privileged`, e nunca monta o socket do
@@ -65,3 +81,14 @@ aplicação. Segredos como chaves de API dos provedores de LLM e tokens nunca s�
 Cada execução recebe um `analysis_id` (UUID), propagado em logs estruturados em JSON: início e fim da
 análise, duração e contagem de achados por agente, falhas em nível de agente. O conteúdo desses logs é
 sempre metadado operacional, nunca segredo, nunca conteúdo bruto de arquivo sensível.
+
+## Perfil Cliente para código confidencial
+
+Para análises em repositórios de cliente, `ANALYSIS_PROFILE=client` trava a execução num modo local:
+LLM só via Ollama, provedores externos (`openai`, `xai`) bloqueados de propósito, e um override que
+tente enfraquecer essa configuração falha antes da análise começar, em vez de ser corrigido
+silenciosamente.
+
+Uma nuance importante: se o repositório for obtido via clone de um GitHub remoto, o clone participa
+da obtenção do código normalmente. A garantia real do Perfil Cliente é que o conteúdo analisado não é
+enviado a provedores externos de LLM, não que nenhum dado sai da máquina em nenhuma hipótese.

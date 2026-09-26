@@ -169,7 +169,7 @@ Achados individuais, com severidade, status de evidência, o código responsáve
 
 ## 🎧 Em áudio
 
-Falei sobre auditoria de código com IA e evidência validada nestas duas faixas:
+Gerei com o NotebookLM duas faixas de áudio sobre auditoria de código com IA e evidência validada:
 
 - 🎙️ [IA na Auditoria de Código: Segurança e Evidências](https://soundcloud.com/jean-carlos-charao-sabino/ia-auditoria-codigo-seguranca)
 - 🎙️ [A IA pode auditar seu código. Desde que prove cada achado.](https://soundcloud.com/jean-carlos-charao-sabino/auditoria-de-codigo-com-ia)
